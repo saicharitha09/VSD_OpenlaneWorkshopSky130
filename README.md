@@ -137,4 +137,5 @@ areafloor1.png
 1. RISC-V ISA
 2. RTL and synthesis of RISC-V based CPU core - picorv32
 3. Physical design implementation of picorv32
+4. ![Area Floorplan](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/ac264cf004e5fbbfa1a9dc25ef686f86d3a8e23d/areafloor1.png)
 
