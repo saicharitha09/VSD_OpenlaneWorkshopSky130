@@ -2,7 +2,7 @@
 
  👩‍💻 Author
 
-**Sai Charitha**
+**SAICHARITHA**
 
 This repository documents my implementation and learning journey through
 the Digital VLSI SoC Design and Planning workshop. The project covers
