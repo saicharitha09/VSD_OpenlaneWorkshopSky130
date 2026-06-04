@@ -140,10 +140,10 @@ Expand or Collapse
 
 Commands to load floorplan def in magic in another terminal
 
-# Change directory to path containing generated floorplan def
+ Change directory to path containing generated floorplan def
 cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-03_12-06/results/floorplan/
 
-# Command to load the floorplan def in magic tool
+Command to load the floorplan def in magic tool
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
 
 ![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/4d5bab9c54d4dc79b958a54ad4e7ba36e54a1a2e/MAGIC.png)
@@ -163,7 +163,7 @@ Unplaced standard cells at the origin
 
 Command to run placement
 
-# Congestion aware placement by default
+Congestion aware placement by default
 run_placement
 ![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/9ac3990269cd812ff69852f1f4308fe688865df2/UNPLACED2.png)
 ![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/9ac3990269cd812ff69852f1f4308fe688865df2/UNPLACED3.png)
@@ -184,10 +184,10 @@ Standard cells legally placed
 ![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/b1a9c12f87557e257500241bda9dab83775b0360/STANDARD.png)
 Commands to exit from current run
 
-# Exit from OpenLANE flow
+Exit from OpenLANE flow
 exit
 
-# Exit from OpenLANE flow docker sub-system
+ Exit from OpenLANE flow docker sub-system
 exit
 
 Section 3 - Design library cell using Magic Layout and ngspice characterization (18/03/2024 - 21/03/2024)
@@ -212,22 +212,22 @@ Section 3 - Tasks 1 to 5 (vsdstdcelldesign)
 Section 3 - Task 6 (drc_tests)
 1. Clone custom inverter standard cell design from github repository
 
-# Change directory to openlane
+ Change directory to openlane
 cd Desktop/work/tools/openlane_working_dir/openlane
 
-# Clone the repository with custom inverter design
+Clone the repository with custom inverter design
 git clone https://github.com/nickson-jose/vsdstdcelldesign
 
-# Change into repository directory
+ Change into repository directory
 cd vsdstdcelldesign
 
-# Copy magic tech file to the repo directory for easy access
+ Copy magic tech file to the repo directory for easy access
 cp /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech .
 
-# Check contents whether everything is present
+ Check contents whether everything is present
 ls
 
-# Command to open custom inverter layout in magic
+ Command to open custom inverter layout in magic
 magic -T sky130A.tech sky130_inv.mag &
 
 Screenshot of commands run
@@ -249,16 +249,16 @@ NMOS source connectivity to VSS (here VGND) verified
 
 Commands for spice extraction of the custom inverter layout to be used in tkcon window of magic
 
-# Check current directory
+ Check current directory
 pwd
 
-# Extraction command to extract to .ext format
+extraction command to extract to .ext format
 extract all
 
-# Before converting ext to spice this command enable the parasitic extraction also
+ Before converting ext to spice this command enable the parasitic extraction also
 ext2spice cthresh 0 rthresh 0
 
-# Converting to ext to spice
+ Converting to ext to spice
 ext2spice
 Screenshot of tkcon window after running above commands
 ![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/b4c74b52af588672aaef6ac6957243d502bcaac9/TK.png)
@@ -273,10 +273,10 @@ Final edited spice file ready for ngspice simulation
 
 Commands for ngspice simulation
 
-# Command to directly load spice file for simulation to ngspice
+ Command to directly load spice file for simulation to ngspice
 ngspice sky130_inv.spice
 
-# Now that we have entered ngspice with the simulation spice file loaded we just have to load the plot
+ Now that we have entered ngspice with the simulation spice file loaded we just have to load the plot
 plot y vs time a
 
 Screenshots of ngspice run
@@ -313,25 +313,25 @@ Link to Sky130 Periphery rules: https://skywater-pdk.readthedocs.io/en/main/rule
 
 Commands to download and view the corrupted skywater process magic tech file and associated files to perform drc corrections
 
-# Change to home directory
+ Change to home directory
 cd
 
-# Command to download the lab files
+ Command to download the lab files
 wget http://opencircuitdesign.com/open_pdks/archive/drc_tests.tgz
 
-# Since lab file is compressed command to extract it
+ Since lab file is compressed command to extract it
 tar xfz drc_tests.tgz
 
-# Change directory into the lab folder
+Change directory into the lab folder
 cd drc_tests
 
-# List all files and directories present in the current directory
+ List all files and directories present in the current directory
 ls -al
 
-# Command to view .magicrc file
+ Command to view .magicrc file
 gvim .magicrc
 
-# Command to open magic tool in better graphics
+ Command to open magic tool in better graphics
 magic -d XR &
 
 Screenshots of commands run
@@ -347,13 +347,13 @@ New commands inserted in sky130A.tech file to update drc
 ![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/e700157be7e3130117fb25a473f6069d445d469a/newcommands.png)
 Commands to run in tkcon window
 
-# Loading updated tech file
+ Loading updated tech file
 tech load sky130A.tech
 
-# Must re-run drc check to see updated drc errors
+ Must re-run drc check to see updated drc errors
 drc check
 
-# Selecting region displaying the new errors and getting the error messages 
+ Selecting region displaying the new errors and getting the error messages 
 drc why
 Screenshot of magic window with rule implemented
 ![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/e700157be7e3130117fb25a473f6069d445d469a/nc.png)
@@ -406,10 +406,10 @@ Conditions to be verified before moving forward with custom designed cell layout
 
 Commands to open the custom inverter layout
 
-# Change directory to vsdstdcelldesign
+ Change directory to vsdstdcelldesign
 cd Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
 
-# Command to open custom inverter layout in magic
+ Command to open custom inverter layout in magic
 magic -T sky130A.tech sky130_inv.mag &
 
 Screenshot of tracks.info of sky130_fd_sc_hd
@@ -417,10 +417,10 @@ Screenshot of tracks.info of sky130_fd_sc_hd
 ![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/c9bca00abaaab4fa1d83cbfd21b2c790570d6ac0/prelayout.png)
 Commands for tkcon window to set grid as tracks of locali layer
 
-# Get syntax for grid command
+ Get syntax for grid command
 help grid
 
-# Set grid values accordingly
+ Set grid values accordingly
 grid 0.46um 0.34um 0.23um 0.17um
 
 Screenshot of commands run
@@ -443,12 +443,12 @@ H e i g h t   o f   s t a n d a r d   c e l l = 2.72   u m = 0.34 ∗ 8
 
 Command for tkcon window to save the layout with custom name
 
-# Command to save as
+ Command to save as
 save sky130_vsdinv.mag
 
 Command to open the newly saved layout
 
-# Command to open custom inverter layout in magic
+ Command to open custom inverter layout in magic
 magic -T sky130A.tech sky130_vsdinv.mag &
 
 Screenshot of newly saved layout
@@ -457,7 +457,7 @@ Screenshot of newly saved layout
 
 Command for tkcon window to write lef
 
-# lef command
+lef command
 lef write
 
 Screenshot of command run
@@ -467,16 +467,16 @@ Screenshot of command run
 
 Commands to copy necessary files to 'picorv32a' design 'src' directory
 
-# Copy lef file
+ Copy lef file
 cp sky130_vsdinv.lef ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
 
-# List and check whether it's copied
+ List and check whether it's copied
 ls ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
 
-# Copy lib files
+ Copy lib files
 cp libs/sky130_fd_sc_hd__* ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
 
-# List and check whether it's copied
+ List and check whether it's copied
 ls ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
 
 
@@ -498,27 +498,27 @@ Edited config.tcl to include the added lef and change library to ones we added i
 
 Commands to invoke the OpenLANE flow include new lef and perform synthesis
 
-# Change directory to openlane flow directory
+ Change directory to openlane flow directory
 cd Desktop/work/tools/openlane_working_dir/openlane
 
-# alias docker='docker run -it -v $(pwd):/openLANE_flow -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) efabless/openlane:v0.21'
-# Since we have aliased the long command to 'docker' we can invoke the OpenLANE flow docker sub-system by just running this command
+ alias docker='docker run -it -v $(pwd):/openLANE_flow -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) efabless/openlane:v0.21'
+ Since we have aliased the long command to 'docker' we can invoke the OpenLANE flow docker sub-system by just running this command
 docker
 
-# Now that we have entered the OpenLANE flow contained docker sub-system we can invoke the OpenLANE flow in the Interactive mode using the following command
+ Now that we have entered the OpenLANE flow contained docker sub-system we can invoke the OpenLANE flow in the Interactive mode using the following command
 ./flow.tcl -interactive
 
-# Now that OpenLANE flow is open we have to input the required packages for proper functionality of the OpenLANE flow
+ Now that OpenLANE flow is open we have to input the required packages for proper functionality of the OpenLANE flow
 package require openlane 0.9
 
-# Now the OpenLANE flow is ready to run any design and initially we have to prep the design creating some necessary files and directories for running a specific design which in our case is 'picorv32a'
+ Now the OpenLANE flow is ready to run any design and initially we have to prep the design creating some necessary files and directories for running a specific design which in our case is 'picorv32a'
 prep -design picorv32a
 
-# Adiitional commands to include newly added lef to openlane flow
+ Adiitional commands to include newly added lef to openlane flow
 set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
 add_lefs -src $lefs
 
-# Now that the design is prepped and ready, we can run synthesis using following command
+ Now that the design is prepped and ready, we can run synthesis using following command
 run_synthesis
 ![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/c9bca00abaaab4fa1d83cbfd21b2c790570d6ac0/runsyn.png)
 7. Remove/reduce the newly introduced violations with the introduction of custom inverter cell by modifying design parameters.
@@ -526,32 +526,32 @@ run_synthesis
 Noting down current design values generated before modifying parameters to improve timing
 ![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/c9bca00abaaab4fa1d83cbfd21b2c790570d6ac0/runtiming.png)
 Commands to view and change parameters to improve timing and run syn
-# Now once again we have to prep design so as to update variables
+ Now once again we have to prep design so as to update variables
 prep -design picorv32a -tag 24-03_10-03 -overwrite
 
-# Addiitional commands to include newly added lef to openlane flow merged.lef
+ Addiitional commands to include newly added lef to openlane flow merged.lef
 set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
 add_lefs -src $lefs
 
-# Command to display current value of variable SYNTH_STRATEGY
+ Command to display current value of variable SYNTH_STRATEGY
 echo $::env(SYNTH_STRATEGY)
 
-# Command to set new value for SYNTH_STRATEGY
+ Command to set new value for SYNTH_STRATEGY
 set ::env(SYNTH_STRATEGY) "DELAY 3"
 
-# Command to display current value of variable SYNTH_BUFFERING to check whether it's enabled
+ Command to display current value of variable SYNTH_BUFFERING to check whether it's enabled
 echo $::env(SYNTH_BUFFERING)
 
-# Command to display current value of variable SYNTH_SIZING
+ Command to display current value of variable SYNTH_SIZING
 echo $::env(SYNTH_SIZING)
 
-# Command to set new value for SYNTH_SIZING
+ Command to set new value for SYNTH_SIZING
 set ::env(SYNTH_SIZING) 1
 
-# Command to display current value of variable SYNTH_DRIVING_CELL to check whether it's the proper cell or not
+ Command to display current value of variable SYNTH_DRIVING_CELL to check whether it's the proper cell or not
 echo $::env(SYNTH_DRIVING_CELL)
 
-# Now that the design is prepped and ready, we can run synthesis using following command
+ Now that the design is prepped and ready, we can run synthesis using following command
 run_synthesis
 Screenshot of merged.lef in tmp directory with our custom inverter as macro
 ![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/c9bca00abaaab4fa1d83cbfd21b2c790570d6ac0/tmp.png)
@@ -559,7 +559,7 @@ Screenshot of merged.lef in tmp directory with our custom inverter as macro
 
 Now that our custom inverter is properly accepted in synthesis we can now run floorplan using following command
 
-# Now we can run floorplan
+ Now we can run floorplan
 run_floorplan
 
 Screenshots of command run
@@ -568,10 +568,10 @@ Screenshots of command run
 ![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/c9bca00abaaab4fa1d83cbfd21b2c790570d6ac0/FLOORPALN3.png)
 Commands to load placement def in magic in another terminal
 
-# Change directory to path containing generated placement def
+ Change directory to path containing generated placement def
 cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/24-03_10-03/results/placement/
 
-# Command to load the placement def in magic tool
+ Command to load the placement def in magic tool
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
 
 Screenshot of placement def in magic
@@ -585,30 +585,30 @@ Abutment of power pins with other cell from library clearly visible
 Since we are having 0 wns after improved timing run we are going to do timing analysis on initial run of synthesis which has lots of violations and no parameters were added to improve timing
 
 Commands to invoke the OpenLANE flow include new lef and perform synthesis
-# Change directory to openlane flow directory
+ Change directory to openlane flow directory
 cd Desktop/work/tools/openlane_working_dir/openlane
 
-# alias docker='docker run -it -v $(pwd):/openLANE_flow -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) efabless/openlane:v0.21'
-# Since we have aliased the long command to 'docker' we can invoke the OpenLANE flow docker sub-system by just running this command
+ alias docker='docker run -it -v $(pwd):/openLANE_flow -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) efabless/openlane:v0.21'
+Since we have aliased the long command to 'docker' we can invoke the OpenLANE flow docker sub-system by just running this command
 docker
 
-# Now that we have entered the OpenLANE flow contained docker sub-system we can invoke the OpenLANE flow in the Interactive mode using the following command
+ Now that we have entered the OpenLANE flow contained docker sub-system we can invoke the OpenLANE flow in the Interactive mode using the following command
 ./flow.tcl -interactive
 
-# Now that OpenLANE flow is open we have to input the required packages for proper functionality of the OpenLANE flow
+ Now that OpenLANE flow is open we have to input the required packages for proper functionality of the OpenLANE flow
 package require openlane 0.9
 
-# Now the OpenLANE flow is ready to run any design and initially we have to prep the design creating some necessary files and directories for running a specific design which in our case is 'picorv32a'
+ Now the OpenLANE flow is ready to run any design and initially we have to prep the design creating some necessary files and directories for running a specific design which in our case is 'picorv32a'
 prep -design picorv32a
 
-# Adiitional commands to include newly added lef to openlane flow
+Adiitional commands to include newly added lef to openlane flow
 set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
 add_lefs -src $lefs
 
-# Command to set new value for SYNTH_SIZING
+ Command to set new value for SYNTH_SIZING
 set ::env(SYNTH_SIZING) 1
 
-# Now that the design is prepped and ready, we can run synthesis using following command
+ Now that the design is prepped and ready, we can run synthesis using following command
 run_synthesis
 
 Commands run final screenshot
@@ -622,135 +622,134 @@ OR gate of drive strength 2 is driving 4 fanouts
 Now to insert this updated netlist to PnR flow and we can use write_verilog and overwrite the synthesis netlist but before that we are going to make a copy of the old old netlist
 
 Commands to make copy of netlist
-# Change from home directory to synthesis results directory
+ Change from home directory to synthesis results directory
 cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/25-03_18-52/results/synthesis/
 
-# List contents of the directory
+ List contents of the directory
 ls
 
-# Copy and rename the netlist
+ Copy and rename the netlist
 cp picorv32a.synthesis.v picorv32a.synthesis_old.v
 
-# List contents of the directory
+List contents of the directory
 ls
 Screenshot of commands run
 ![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/8c87d7d14e2d9a5f376dcc96576ed66a7fee7747/command12.png)
 12. Post-CTS OpenROAD timing analysis.
 
 Commands to be run in OpenLANE flow to do OpenROAD timing analysis with integrated OpenSTA in OpenROAD
-# Command to run OpenROAD tool
+ Command to run OpenROAD tool
 openroad
 
-# Reading lef file
+ Reading lef file
 read_lef /openLANE_flow/designs/picorv32a/runs/24-03_10-03/tmp/merged.lef
 
-# Reading def file
+ Reading def file
 read_def /openLANE_flow/designs/picorv32a/runs/24-03_10-03/results/cts/picorv32a.cts.def
 
-# Creating an OpenROAD database to work with
+ Creating an OpenROAD database to work with
 write_db pico_cts.db
 
-# Loading the created database in OpenROAD
+Loading the created database in OpenROAD
 read_db pico_cts.db
-
-# Read netlist post CTS
+ Read netlist post CTS
 read_verilog /openLANE_flow/designs/picorv32a/runs/24-03_10-03/results/synthesis/picorv32a.synthesis_cts.v
 
-# Read library for design
+ Read library for design
 read_liberty $::env(LIB_SYNTH_COMPLETE)
 
-# Link design and library
+ Link design and library
 link_design picorv32a
 
-# Read in the custom sdc we created
+ Read in the custom sdc we created
 read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
 
-# Setting all cloks as propagated clocks
+ Setting all cloks as propagated clocks
 set_propagated_clock [all_clocks]
 
-# Check syntax of 'report_checks' command
+ Check syntax of 'report_checks' command
 help report_checks
 
 # Generating custom timing report
 report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
 
-# Exit to OpenLANE flow
+ Exit to OpenLANE flow
 exit
 ![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/8c87d7d14e2d9a5f376dcc96576ed66a7fee7747/openroad.png)
 ![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/8c87d7d14e2d9a5f376dcc96576ed66a7fee7747/openroad2.png)
 13. Explore post-CTS OpenROAD timing analysis by removing 'sky130_fd_sc_hd__clkbuf_1' cell from clock buffer list variable 'CTS_CLK_BUFFER_LIST'.
 
 Commands to be run in OpenLANE flow to do OpenROAD timing analysis after changing C
-# Checking current value of 'CTS_CLK_BUFFER_LIST'
+ Checking current value of 'CTS_CLK_BUFFER_LIST'
 echo $::env(CTS_CLK_BUFFER_LIST)
 
-# Removing 'sky130_fd_sc_hd__clkbuf_1' from the list
+ Removing 'sky130_fd_sc_hd__clkbuf_1' from the list
 set ::env(CTS_CLK_BUFFER_LIST) [lreplace $::env(CTS_CLK_BUFFER_LIST) 0 0]
 
-# Checking current value of 'CTS_CLK_BUFFER_LIST'
+ Checking current value of 'CTS_CLK_BUFFER_LIST'
 echo $::env(CTS_CLK_BUFFER_LIST)
 
-# Checking current value of 'CURRENT_DEF'
+ Checking current value of 'CURRENT_DEF'
 echo $::env(CURRENT_DEF)
 
-# Setting def as placement def
+ Setting def as placement def
 set ::env(CURRENT_DEF) /openLANE_flow/designs/picorv32a/runs/24-03_10-03/results/placement/picorv32a.placement.def
 
-# Run CTS again
+ Run CTS again
 run_cts
 
-# Checking current value of 'CTS_CLK_BUFFER_LIST'
+ Checking current value of 'CTS_CLK_BUFFER_LIST'
 echo $::env(CTS_CLK_BUFFER_LIST)
 
-# Command to run OpenROAD tool
+ Command to run OpenROAD tool
 openroad
 
-# Reading lef file
+ Reading lef file
 read_lef /openLANE_flow/designs/picorv32a/runs/24-03_10-03/tmp/merged.lef
 
-# Reading def file
+ Reading def file
 read_def /openLANE_flow/designs/picorv32a/runs/24-03_10-03/results/cts/picorv32a.cts.def
 
-# Creating an OpenROAD database to work with
+ Creating an OpenROAD database to work with
 write_db pico_cts1.db
 
-# Loading the created database in OpenROAD
+ Loading the created database in OpenROAD
 read_db pico_cts.db
 
-# Read netlist post CTS
+ Read netlist post CTS
 read_verilog /openLANE_flow/designs/picorv32a/runs/24-03_10-03/results/synthesis/picorv32a.synthesis_cts.v
 
-# Read library for design
+ Read library for design
 read_liberty $::env(LIB_SYNTH_COMPLETE)
 
-# Link design and library
+ Link design and library
 link_design picorv32a
 
-# Read in the custom sdc we created
+ Read in the custom sdc we created
 read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
 
-# Setting all cloks as propagated clocks
+ Setting all cloks as propagated clocks
 set_propagated_clock [all_clocks]
 
-# Generating custom timing report
+ Generating custom timing report
 report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
 
-# Report hold skew
+ Report hold skew
 report_clock_skew -hold
 
-# Report setup skew
+ Report setup skew
 report_clock_skew -setup
 
-# Exit to OpenLANE flow
+ Exit to OpenLANE flow
 exit
 
-# Checking current value of 'CTS_CLK_BUFFER_LIST'
+ Checking current value of 'CTS_CLK_BUFFER_LIST'
 echo $::env(CTS_CLK_BUFFER_LIST)
 
-# Inserting 'sky130_fd_sc_hd__clkbuf_1' to first index of list
+ Inserting 'sky130_fd_sc_hd__clkbuf_1' to first index of list
 set ::env(CTS_CLK_BUFFER_LIST) [linsert $::env(CTS_CLK_BUFFER_LIST) 0 sky130_fd_sc_hd__clkbuf_1]
 
-# Checking current value of 'CTS_CLK_BUFFER_LIST'
+ Checking current value of 'CTS_CLK_BUFFER_LIST'
 echo $::env(CTS_CLK_BUFFER_LIST)
 Section 5 - Final steps for RTL2GDS using tritonRoute and openSTA (25/03/2024 - 26/03/2024)
 Theory
@@ -773,47 +772,47 @@ Commands to perform all necessary stages up until now
 # Change directory to openlane flow directory
 cd Desktop/work/tools/openlane_working_dir/openlane
 
-# alias docker='docker run -it -v $(pwd):/openLANE_flow -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) efabless/openlane:v0.21'
-# Since we have aliased the long command to 'docker' we can invoke the OpenLANE flow docker sub-system by just running this command
+ alias docker='docker run -it -v $(pwd):/openLANE_flow -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) efabless/openlane:v0.21'
+ Since we have aliased the long command to 'docker' we can invoke the OpenLANE flow docker sub-system by just running this command
 docker
 
-# Now that we have entered the OpenLANE flow contained docker sub-system we can invoke the OpenLANE flow in the Interactive mode using the following command
+ Now that we have entered the OpenLANE flow contained docker sub-system we can invoke the OpenLANE flow in the Interactive mode using the following command
 ./flow.tcl -interactive
 
-# Now that OpenLANE flow is open we have to input the required packages for proper functionality of the OpenLANE flow
+ Now that OpenLANE flow is open we have to input the required packages for proper functionality of the OpenLANE flow
 package require openlane 0.9
 
-# Now the OpenLANE flow is ready to run any design and initially we have to prep the design creating some necessary files and directories for running a specific design which in our case is 'picorv32a'
+ Now the OpenLANE flow is ready to run any design and initially we have to prep the design creating some necessary files and directories for running a specific design which in our case is 'picorv32a'
 prep -design picorv32a
 
 # Addiitional commands to include newly added lef to openlane flow merged.lef
 set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
 add_lefs -src $lefs
 
-# Command to set new value for SYNTH_STRATEGY
+ Command to set new value for SYNTH_STRATEGY
 set ::env(SYNTH_STRATEGY) "DELAY 3"
 
-# Command to set new value for SYNTH_SIZING
+ Command to set new value for SYNTH_SIZING
 set ::env(SYNTH_SIZING) 1
 
-# Now that the design is prepped and ready, we can run synthesis using following command
+ Now that the design is prepped and ready, we can run synthesis using following command
 run_synthesis
 
-# Following commands are alltogather sourced in "run_floorplan" command
+ Following commands are alltogather sourced in "run_floorplan" command
 init_floorplan
 place_io
 tap_decap_or
 
-# Now we are ready to run placement
+Now we are ready to run placement
 run_placement
 
-# Incase getting error
+ Incase getting error
 unset ::env(LIB_CTS)
 
-# With placement done we are now ready to run CTS
+ With placement done we are now ready to run CTS
 run_cts
 
-# Now that CTS is done we can do power distribution network
+ Now that CTS is done we can do power distribution network
 gen_pdn 
 Screenshots of power distribution network run
 ![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/8c87d7d14e2d9a5f376dcc96576ed66a7fee7747/pdn.png)
@@ -856,37 +855,36 @@ Commands to be run in OpenLANE flow to do OpenROAD timing analysis with integrat
 # Command to run OpenROAD tool
 openroad
 
-# Reading lef file
+ Reading lef file
 read_lef /openLANE_flow/designs/picorv32a/runs/26-03_08-45/tmp/merged.lef
 
-# Reading def file
+Reading def file
 read_def /openLANE_flow/designs/picorv32a/runs/26-03_08-45/results/routing/picorv32a.def
 
-# Creating an OpenROAD database to work with
+ Creating an OpenROAD database to work with
 write_db pico_route.db
 
-# Loading the created database in OpenROAD
+ Loading the created database in OpenROAD
 read_db pico_route.db
 
-# Read netlist post CTS
+ Read netlist post CTS
 read_verilog /openLANE_flow/designs/picorv32a/runs/26-03_08-45/results/synthesis/picorv32a.synthesis_preroute.v
 
-# Read library for design
+Read library for design
 read_liberty $::env(LIB_SYNTH_COMPLETE)
 
-# Link design and library
+Link design and library
 link_design picorv32a
 
-# Read in the custom sdc we created
+Read in the custom sdc we created
 read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
 
-# Setting all cloks as propagated clocks
+ Setting all cloks as propagated clocks
 set_propagated_clock [all_clocks]
-
-# Read SPEF
+ Read SPEF
 read_spef /openLANE_flow/designs/picorv32a/runs/26-03_08-45/results/routing/picorv32a.spef
 
-# Generating custom timing report
+ Generating custom timing report
 report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
 
 # Exit to OpenLANE flow
