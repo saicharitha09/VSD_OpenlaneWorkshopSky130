@@ -133,7 +133,21 @@ Expand or Collapse
 
 ![areafloor1.png](https://github.com/saicharitha09/VSD_OpenlaneWorkshopSky130/blob/main/areafloor1.png?raw=true)
 
-* There are mainly 3 different parts in this course. They are:
-1. RISC-V ISA
-2. RTL and synthesis of RISC-V based CPU core - picorv32
-3. Physical design implementation of picorv32
+
+
+
+3. Load generated floorplan def in magic tool and explore the floorplan.
+
+Commands to load floorplan def in magic in another terminal
+
+# Change directory to path containing generated floorplan def
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-03_12-06/results/floorplan/
+
+# Command to load the floorplan def in magic tool
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
+
+![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/4d5bab9c54d4dc79b958a54ad4e7ba36e54a1a2e/MAGIC.png)
+Equidistant placement of ports
+![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/4d5bab9c54d4dc79b958a54ad4e7ba36e54a1a2e/MAGIC2.png)
+Port layer as set through config.tcl
+![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/4d5bab9c54d4dc79b958a54ad4e7ba36e54a1a2e/MAGIC3.png)
