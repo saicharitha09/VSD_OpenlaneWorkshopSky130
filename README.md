@@ -93,18 +93,18 @@ Expand or Collapse
 
 * In any embedded board we have seen, the part of the board we consider as the chip is only the ***PACKAGE*** of the chip which is nothing but a protective layer or packet bound over the actual chip and the actual manufatured chip is usually present at the center of a package wherein, the connections from package is fed to the chip by ***WIRE BOUND*** method which is none other than basic wired connection.
 
-313255858-d19f6d0f-16f8-4e79-aa5a-f2a34b9fb203.png
-synthesis.png
+![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/ac264cf004e5fbbfa1a9dc25ef686f86d3a8e23d/areafloor1.png313255858-d19f6d0f-16f8-4e79-aa5a-f2a34b9fb203.png)
+![synthesis.png](https://github.com/saicharitha09/VSD_OpenlaneWorkshopSky130/blob/main/synthesis.png?raw=true)
 
 #### Chip
 
 * Now, taking a look inside the chip, all the signals from the external world to the chip and vice versa is passed through ***PADS***. The area bound by the pads is ***CORE*** where all the digital logic of the chip is placed. Both the core and pads make up the ***DIE*** which is the basic manufacturing unit in regards to semiconductor chips.
 
-floorplan1.png
+![floorplan1.png](https://github.com/saicharitha09/VSD_OpenlaneWorkshopSky130/blob/main/floorplan1.png?raw=true)
 
 * ***FOUNDRY*** is the place where the semiconductor chips are manufactured and ***FOUNDRY IP's*** are Intellectual Properties based on a specific foundry and these IP's require a specific level of intelligence to be produced whereas, repeatable digital logic blocks are called ***MACROS***.
 
-floorplan2.png
+![floorplan2.png](https://github.com/saicharitha09/VSD_OpenlaneWorkshopSky130/blob/main/floorplan2.png?raw=true)
 
 #### ISA (Intruction Set Architecture)
 
@@ -113,29 +113,27 @@ floorplan2.png
 * Following this, the assembly language program is then converted to machine language program which is the binary language logic 0 and 1 which is understood by the hardware of the computer.
 * Directly after this, we've to implement this RISC-V specification using some ***RTL (a Hardware Description Language)***. Finally, from the RTL to ***Layout*** it is a standard PnR or RTL to GDSII flow.
 
-flopratio.png
+![flopratio.png](https://github.com/saicharitha09/VSD_OpenlaneWorkshopSky130/blob/main/flopratio.png?raw=true)
 
 * For an application software to be run on a hardware there are several processes taking place. To begin with, the apps enters into a block called system software and it converts the application program to binary language. There are various layers in system software in which the major layers or components are OS (Operating System), Compiler and Assembler.
 * At first the OS outputs are small function in C, C++, VB or Java language which are taken by the respective compiler and converted into instructions and the syntax of these instructions varies with the hardware architecture on which the system is implemented.
 * Then, the job of the assembler is to take these instructions and convert it into it's binary format which is basically called as a machine language program. Finally, this binary language is fed to the hardware and it understands the specific functions it has to perform based on the binary code it receives.
 
-flopratio2.png
+![flopratio2.png](https://github.com/saicharitha09/VSD_OpenlaneWorkshopSky130/blob/main/flopratio2.png?raw=true)
 
 * For example, if we take a stopwatch app on RISC-V core, then the output of the OS could be a small C function which enters into the compiler and we get output RISC-V instructions following this, the output of the assembler will be the binary code which enters into your chip layout.
 
-floorplan3.png
+![floorplan3.png](https://github.com/saicharitha09/VSD_OpenlaneWorkshopSky130/blob/main/floorplan3.png?raw=true)
 
 * For the above stopwatch the following are the input and output of the compiler and assembler.
 
-floorplan4.png
+![floorplan4.png](https://github.com/saicharitha09/VSD_OpenlaneWorkshopSky130/blob/main/floorplan4.png?raw=true)
 
 * The output of the compiler are instructions and the output of the assembler is the binary pattern. Now, we need some RTL (a Hardware Description Language) which understands and implements the particular instructions. Then, this RTL is synthesised into a netlist in form of gates which is fabricated into the chip through a physical design implementation.
 
-areafloor1.png
+![areafloor1.png](https://github.com/saicharitha09/VSD_OpenlaneWorkshopSky130/blob/main/areafloor1.png?raw=true)
 
 * There are mainly 3 different parts in this course. They are:
 1. RISC-V ISA
 2. RTL and synthesis of RISC-V based CPU core - picorv32
 3. Physical design implementation of picorv32
-4. ![Area Floorplan](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/ac264cf004e5fbbfa1a9dc25ef686f86d3a8e23d/areafloor1.png)
-
