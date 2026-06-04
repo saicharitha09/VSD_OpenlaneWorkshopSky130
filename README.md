@@ -102,7 +102,7 @@ Comments
 
 > 2 Week digital VLSI SoC design and planning workshop with complete RTL2GDSII flow organised by VSD in collaboration with NASSCOM
 
-## Section 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK (14/03/2024 - 15/03/2024)
+## Section 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK 
 
 ### Theory
 
