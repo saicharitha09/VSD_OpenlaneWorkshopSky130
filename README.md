@@ -92,7 +92,7 @@ Expand or Collapse
 #### Package
 
 * In any embedded board we have seen, the part of the board we consider as the chip is only the ***PACKAGE*** of the chip which is nothing but a protective layer or packet bound over the actual chip and the actual manufatured chip is usually present at the center of a package wherein, the connections from package is fed to the chip by ***WIRE BOUND*** method which is none other than basic wired connection.
-
+![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/009431be56f58194dbe99f9fe78e011340dcf9c9/openlane.png)
 ![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/ac264cf004e5fbbfa1a9dc25ef686f86d3a8e23d/areafloor1.png313255858-d19f6d0f-16f8-4e79-aa5a-f2a34b9fb203.png)
 ![synthesis.png](https://github.com/saicharitha09/VSD_OpenlaneWorkshopSky130/blob/main/synthesis.png?raw=true)
 
