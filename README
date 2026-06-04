@@ -1,6 +1,6 @@
-# Digital VLSI SoC Design and Planning
+ Digital VLSI SoC Design and Planning
 
-## 👩‍💻 Author
+ 👩‍💻 Author
 
 **Sai Charitha**
 
@@ -11,7 +11,7 @@ and the Sky130 Process Design Kit (PDK).
 
 ------------------------------------------------------------------------
 
-## 📌 Project Overview
+📌 Project Overview
 
 The project demonstrates the complete ASIC design cycle, including:
 
@@ -28,7 +28,7 @@ The project demonstrates the complete ASIC design cycle, including:
 
 ------------------------------------------------------------------------
 
-## 🛠️ Tools Used
+ 🛠️ Tools Used
 
   Tool         Purpose
   ------------ ---------------------
@@ -43,7 +43,7 @@ The project demonstrates the complete ASIC design cycle, including:
 
 ------------------------------------------------------------------------
 
-## 🎯 Learning Outcomes
+ 🎯 Learning Outcomes
 
 -   ASIC Design Flow
 -   RTL-to-GDSII Implementation
@@ -57,21 +57,21 @@ The project demonstrates the complete ASIC design cycle, including:
 
 ## 🚀 Key Highlights
 
-✅ Complete RTL-to-GDSII Flow Implementation
+ Complete RTL-to-GDSII Flow Implementation
 
-✅ OpenLANE-Based Physical Design
+ OpenLANE-Based Physical Design
 
-✅ Custom Standard Cell Design
+ Custom Standard Cell Design
 
-✅ Timing Analysis using OpenSTA
+ Timing Analysis using OpenSTA
 
-✅ Layout Verification using Magic
+ Layout Verification using Magic
 
-✅ DRC Rule Debugging and Fixes
+ DRC Rule Debugging and Fixes
 
 ------------------------------------------------------------------------
 
-## 📜 Acknowledgements
+📜 Acknowledgements
 
 This project was completed as part of the Digital VLSI SoC Design and
 Planning workshop conducted by VSD in collaboration with NASSCOM. The
