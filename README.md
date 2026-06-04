@@ -151,3 +151,121 @@ Equidistant placement of ports
 ![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/4d5bab9c54d4dc79b958a54ad4e7ba36e54a1a2e/MAGIC2.png)
 Port layer as set through config.tcl
 ![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/4d5bab9c54d4dc79b958a54ad4e7ba36e54a1a2e/MAGIC3.png)
+
+Decap Cells and Tap Cells
+![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/9ac3990269cd812ff69852f1f4308fe688865df2/DECAP.png)
+Diogonally equidistant Tap cells
+![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/9ac3990269cd812ff69852f1f4308fe688865df2/DECAP2.png)
+Unplaced standard cells at the origin
+![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/9ac3990269cd812ff69852f1f4308fe688865df2/UNPLACED.png)
+
+4. Run 'picorv32a' design congestion aware placement using OpenLANE flow and generate necessary outputs.
+
+Command to run placement
+
+# Congestion aware placement by default
+run_placement
+![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/9ac3990269cd812ff69852f1f4308fe688865df2/UNPLACED2.png)
+![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/9ac3990269cd812ff69852f1f4308fe688865df2/UNPLACED3.png)
+
+5. Load generated placement def in magic tool and explore the placement.
+
+Commands to load placement def in magic in another terminal
+
+# Change directory to path containing generated placement def
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-03_12-06/results/placement/
+
+# Command to load the placement def in magic tool
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+
+Screenshots of floorplan def in magic
+![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/b1a9c12f87557e257500241bda9dab83775b0360/MAGICTOOL.png)
+Standard cells legally placed
+![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/b1a9c12f87557e257500241bda9dab83775b0360/STANDARD.png)
+Commands to exit from current run
+
+# Exit from OpenLANE flow
+exit
+
+# Exit from OpenLANE flow docker sub-system
+exit
+
+Section 3 - Design library cell using Magic Layout and ngspice characterization (18/03/2024 - 21/03/2024)
+Theory
+Implementation
+
+    Section 3 tasks:-
+
+    Clone custom inverter standard cell design from github repository: Standard cell design and characterization using OpenLANE flow.
+    Load the custom inverter layout in magic and explore.
+    Spice extraction of inverter in magic.
+    Editing the spice model file for analysis through simulation.
+    Post-layout ngspice simulations.
+    Find problem in the DRC section of the old magic tech file for the skywater process and fix them.
+
+    Section 3 - Tasks 1 to 5 files, reports and logs can be found in the following folder:
+
+Section 3 - Tasks 1 to 5 (vsdstdcelldesign)
+
+    Section 3 - Task 6 files, reports and logs can be found in the following folder:
+
+Section 3 - Task 6 (drc_tests)
+1. Clone custom inverter standard cell design from github repository
+
+# Change directory to openlane
+cd Desktop/work/tools/openlane_working_dir/openlane
+
+# Clone the repository with custom inverter design
+git clone https://github.com/nickson-jose/vsdstdcelldesign
+
+# Change into repository directory
+cd vsdstdcelldesign
+
+# Copy magic tech file to the repo directory for easy access
+cp /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech .
+
+# Check contents whether everything is present
+ls
+
+# Command to open custom inverter layout in magic
+magic -T sky130A.tech sky130_inv.mag &
+
+Screenshot of commands run
+![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/b1a9c12f87557e257500241bda9dab83775b0360/COMMAND.png)
+2. Load the custom inverter layout in magic and explore.
+
+Screenshot of custom inverter layout in magic
+![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/b1a9c12f87557e257500241bda9dab83775b0360/LOAD.png)
+NMOS and PMOS identified
+![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/b1a9c12f87557e257500241bda9dab83775b0360/PMOS.png)
+Output Y connectivity to PMOS and NMOS drain verified
+![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/b1a9c12f87557e257500241bda9dab83775b0360/OUTPUT.png)
+PMOS source connectivity to VDD (here VPWR) verified
+![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/b1a9c12f87557e257500241bda9dab83775b0360/PMOSOP.png)
+NMOS source connectivity to VSS (here VGND) verified
+![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/b1a9c12f87557e257500241bda9dab83775b0360/NMOSOP.png)
+
+3. Spice extraction of inverter in magic.
+
+Commands for spice extraction of the custom inverter layout to be used in tkcon window of magic
+
+# Check current directory
+pwd
+
+# Extraction command to extract to .ext format
+extract all
+
+# Before converting ext to spice this command enable the parasitic extraction also
+ext2spice cthresh 0 rthresh 0
+
+# Converting to ext to spice
+ext2spice
+Screenshot of tkcon window after running above commands
+![](
+Screenshot of created spice file
+![](
+4. Editing the spice model file for analysis through simulation.
+
+Measuring unit distance in layout grid
+![](
+
