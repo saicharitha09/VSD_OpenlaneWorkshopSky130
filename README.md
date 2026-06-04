@@ -261,11 +261,27 @@ ext2spice cthresh 0 rthresh 0
 # Converting to ext to spice
 ext2spice
 Screenshot of tkcon window after running above commands
-![](
+![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/b4c74b52af588672aaef6ac6957243d502bcaac9/TK.png)
 Screenshot of created spice file
-![](
+![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/b4c74b52af588672aaef6ac6957243d502bcaac9/SPICE.png)
 4. Editing the spice model file for analysis through simulation.
 
-Measuring unit distance in layout grid
-![](
+
+Final edited spice file ready for ngspice simulation
+![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/b4c74b52af588672aaef6ac6957243d502bcaac9/FINAL.png)
+5. Post-layout ngspice simulations.
+
+Commands for ngspice simulation
+
+# Command to directly load spice file for simulation to ngspice
+ngspice sky130_inv.spice
+
+# Now that we have entered ngspice with the simulation spice file loaded we just have to load the plot
+plot y vs time a
+
+Screenshots of ngspice run
+![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/b4c74b52af588672aaef6ac6957243d502bcaac9/NGSPICE.png)
+Screenshot of generated plot
+![](https://raw.githubusercontent.com/saicharitha09/VSD_OpenlaneWorkshopSky130/b4c74b52af588672aaef6ac6957243d502bcaac9/PLOT.png)
+
 
